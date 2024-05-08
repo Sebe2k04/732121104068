@@ -1,8 +1,8 @@
 import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Calculator = () => {
-  const [windowPrevState, setWindowPrevState] = useState([]);
+  //const [windowPrevState, setWindowPrevState] = useState([]);
   const [windowCurrState, setWindowCurrState] = useState([]);
   const [numbers, setNumbers] = useState([]);
   const [avg, setAvg] = useState(0);
@@ -11,11 +11,13 @@ const Calculator = () => {
     if (valtype === "prime") {
       try {
         const res = await axios.get("http://20.244.56.144/test/primes", {
-          Authoriztion: {
-            token_type: "Bearer",
-            access_token:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzE1MTYwNDgyLCJpYXQiOjE3MTUxNjAxODIsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6ImU0NGQ3MzBmLTVhMDUtNGRjNS05Zjc5LTg4YjUxMzExODkxNiIsInN1YiI6InNlYmUyazA0QGdtYWlsLmNvbSJ9LCJjb21wYW55TmFtZSI6ImdlbnJpbyIsImNsaWVudElEIjoiZTQ0ZDczMGYtNWEwNS00ZGM1LTlmNzktODhiNTEzMTE4OTE2IiwiY2xpZW50U2VjcmV0IjoiTkpMYWt0WlF4eUdhQVFQcSIsIm93bmVyTmFtZSI6InNlYmVzYXJhdmFuYW4iLCJvd25lckVtYWlsIjoic2ViZTJrMDRAZ21haWwuY29tIiwicm9sbE5vIjoiNzMyMTIxMTA0MDY4In0.WsWQAORAmWbKYULBS9dPWD7Ly8FDlvi3Ws-3WBS_Bzs",
-            expires_in: 1715160482,
+          headers: {
+            Authoriztion: {
+              token_type: "Bearer",
+              access_token:
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzE1MTYwNDgyLCJpYXQiOjE3MTUxNjAxODIsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6ImU0NGQ3MzBmLTVhMDUtNGRjNS05Zjc5LTg4YjUxMzExODkxNiIsInN1YiI6InNlYmUyazA0QGdtYWlsLmNvbSJ9LCJjb21wYW55TmFtZSI6ImdlbnJpbyIsImNsaWVudElEIjoiZTQ0ZDczMGYtNWEwNS00ZGM1LTlmNzktODhiNTEzMTE4OTE2IiwiY2xpZW50U2VjcmV0IjoiTkpMYWt0WlF4eUdhQVFQcSIsIm93bmVyTmFtZSI6InNlYmVzYXJhdmFuYW4iLCJvd25lckVtYWlsIjoic2ViZTJrMDRAZ21haWwuY29tIiwicm9sbE5vIjoiNzMyMTIxMTA0MDY4In0.WsWQAORAmWbKYULBS9dPWD7Ly8FDlvi3Ws-3WBS_Bzs",
+              expires_in: 1715160482,
+            },
           },
         });
         setNumbers(res.data);
@@ -26,11 +28,13 @@ const Calculator = () => {
     } else if (valtype === "fibonacci") {
       try {
         const res = await axios.get("http://20.244.56.144/test/fibo", {
-          Authoriztion: {
-            token_type: "Bearer",
-            access_token:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzE1MTYwNDgyLCJpYXQiOjE3MTUxNjAxODIsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6ImU0NGQ3MzBmLTVhMDUtNGRjNS05Zjc5LTg4YjUxMzExODkxNiIsInN1YiI6InNlYmUyazA0QGdtYWlsLmNvbSJ9LCJjb21wYW55TmFtZSI6ImdlbnJpbyIsImNsaWVudElEIjoiZTQ0ZDczMGYtNWEwNS00ZGM1LTlmNzktODhiNTEzMTE4OTE2IiwiY2xpZW50U2VjcmV0IjoiTkpMYWt0WlF4eUdhQVFQcSIsIm93bmVyTmFtZSI6InNlYmVzYXJhdmFuYW4iLCJvd25lckVtYWlsIjoic2ViZTJrMDRAZ21haWwuY29tIiwicm9sbE5vIjoiNzMyMTIxMTA0MDY4In0.WsWQAORAmWbKYULBS9dPWD7Ly8FDlvi3Ws-3WBS_Bzs",
-            expires_in: 1715160482,
+          headers: {
+            Authoriztion: {
+              token_type: "Bearer",
+              access_token:
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzE1MTYwNDgyLCJpYXQiOjE3MTUxNjAxODIsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6ImU0NGQ3MzBmLTVhMDUtNGRjNS05Zjc5LTg4YjUxMzExODkxNiIsInN1YiI6InNlYmUyazA0QGdtYWlsLmNvbSJ9LCJjb21wYW55TmFtZSI6ImdlbnJpbyIsImNsaWVudElEIjoiZTQ0ZDczMGYtNWEwNS00ZGM1LTlmNzktODhiNTEzMTE4OTE2IiwiY2xpZW50U2VjcmV0IjoiTkpMYWt0WlF4eUdhQVFQcSIsIm93bmVyTmFtZSI6InNlYmVzYXJhdmFuYW4iLCJvd25lckVtYWlsIjoic2ViZTJrMDRAZ21haWwuY29tIiwicm9sbE5vIjoiNzMyMTIxMTA0MDY4In0.WsWQAORAmWbKYULBS9dPWD7Ly8FDlvi3Ws-3WBS_Bzs",
+              expires_in: 1715160482,
+            },
           },
         });
         setNumbers(res.data);
@@ -41,11 +45,13 @@ const Calculator = () => {
     } else if (valtype === "even") {
       try {
         const res = await axios.get("http://20.244.56.144/test/even", {
-          Authoriztion: {
-            token_type: "Bearer",
-            access_token:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzE1MTYwNDgyLCJpYXQiOjE3MTUxNjAxODIsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6ImU0NGQ3MzBmLTVhMDUtNGRjNS05Zjc5LTg4YjUxMzExODkxNiIsInN1YiI6InNlYmUyazA0QGdtYWlsLmNvbSJ9LCJjb21wYW55TmFtZSI6ImdlbnJpbyIsImNsaWVudElEIjoiZTQ0ZDczMGYtNWEwNS00ZGM1LTlmNzktODhiNTEzMTE4OTE2IiwiY2xpZW50U2VjcmV0IjoiTkpMYWt0WlF4eUdhQVFQcSIsIm93bmVyTmFtZSI6InNlYmVzYXJhdmFuYW4iLCJvd25lckVtYWlsIjoic2ViZTJrMDRAZ21haWwuY29tIiwicm9sbE5vIjoiNzMyMTIxMTA0MDY4In0.WsWQAORAmWbKYULBS9dPWD7Ly8FDlvi3Ws-3WBS_Bzs",
-            expires_in: 1715160482,
+          headers: {
+            Authoriztion: {
+              token_type: "Bearer",
+              access_token:
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzE1MTYwNDgyLCJpYXQiOjE3MTUxNjAxODIsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6ImU0NGQ3MzBmLTVhMDUtNGRjNS05Zjc5LTg4YjUxMzExODkxNiIsInN1YiI6InNlYmUyazA0QGdtYWlsLmNvbSJ9LCJjb21wYW55TmFtZSI6ImdlbnJpbyIsImNsaWVudElEIjoiZTQ0ZDczMGYtNWEwNS00ZGM1LTlmNzktODhiNTEzMTE4OTE2IiwiY2xpZW50U2VjcmV0IjoiTkpMYWt0WlF4eUdhQVFQcSIsIm93bmVyTmFtZSI6InNlYmVzYXJhdmFuYW4iLCJvd25lckVtYWlsIjoic2ViZTJrMDRAZ21haWwuY29tIiwicm9sbE5vIjoiNzMyMTIxMTA0MDY4In0.WsWQAORAmWbKYULBS9dPWD7Ly8FDlvi3Ws-3WBS_Bzs",
+              expires_in: 1715160482,
+            },
           },
         });
         setNumbers(res.data);
@@ -56,11 +62,13 @@ const Calculator = () => {
     } else {
       try {
         const res = await axios.get("http://20.244.56.144/test/rand", {
-          Authoriztion: {
-            token_type: "Bearer",
-            access_token:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzE1MTYwNDgyLCJpYXQiOjE3MTUxNjAxODIsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6ImU0NGQ3MzBmLTVhMDUtNGRjNS05Zjc5LTg4YjUxMzExODkxNiIsInN1YiI6InNlYmUyazA0QGdtYWlsLmNvbSJ9LCJjb21wYW55TmFtZSI6ImdlbnJpbyIsImNsaWVudElEIjoiZTQ0ZDczMGYtNWEwNS00ZGM1LTlmNzktODhiNTEzMTE4OTE2IiwiY2xpZW50U2VjcmV0IjoiTkpMYWt0WlF4eUdhQVFQcSIsIm93bmVyTmFtZSI6InNlYmVzYXJhdmFuYW4iLCJvd25lckVtYWlsIjoic2ViZTJrMDRAZ21haWwuY29tIiwicm9sbE5vIjoiNzMyMTIxMTA0MDY4In0.WsWQAORAmWbKYULBS9dPWD7Ly8FDlvi3Ws-3WBS_Bzs",
-            expires_in: 1715160482,
+          headers: {
+            Authoriztion: {
+              token_type: "Bearer",
+              access_token:
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzE1MTYwNDgyLCJpYXQiOjE3MTUxNjAxODIsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6ImU0NGQ3MzBmLTVhMDUtNGRjNS05Zjc5LTg4YjUxMzExODkxNiIsInN1YiI6InNlYmUyazA0QGdtYWlsLmNvbSJ9LCJjb21wYW55TmFtZSI6ImdlbnJpbyIsImNsaWVudElEIjoiZTQ0ZDczMGYtNWEwNS00ZGM1LTlmNzktODhiNTEzMTE4OTE2IiwiY2xpZW50U2VjcmV0IjoiTkpMYWt0WlF4eUdhQVFQcSIsIm93bmVyTmFtZSI6InNlYmVzYXJhdmFuYW4iLCJvd25lckVtYWlsIjoic2ViZTJrMDRAZ21haWwuY29tIiwicm9sbE5vIjoiNzMyMTIxMTA0MDY4In0.WsWQAORAmWbKYULBS9dPWD7Ly8FDlvi3Ws-3WBS_Bzs",
+              expires_in: 1715160482,
+            },
           },
         });
         setNumbers(res.data);
